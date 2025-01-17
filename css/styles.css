@@ -36,6 +36,12 @@
   text-align: center;
 }
 
+.logo {
+  position: absolute;
+  top: 1em;
+  left: 1em;
+}
+
 .content h1 {
   font-size: 2rem;
   font-weight: bold;
@@ -50,9 +56,9 @@
   justify-content: center;
   align-items: center;
   background: white;
-  border-radius: 30px;
+  border-radius: 7px;
   overflow: hidden;
-  width: 60%;
+  width: 50vw;
   margin: auto;
 }
 
