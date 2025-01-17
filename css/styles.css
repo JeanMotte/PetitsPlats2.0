@@ -1,5 +1,10 @@
 /* FONT */
 * {
+  font-family: 'Manrope', sans-serif;
+}
+
+.logo,
+.content h1 {
   font-family: 'Anton', serif;
   font-weight: 400;
   font-style: normal;
@@ -94,4 +99,43 @@
   width: 45px;
   height: 45px;
   border-radius: 8px;
+}
+
+main {
+  margin-inline: 100px;
+}
+
+/* FILTERS */
+.filter-container {
+  display: flex;
+  justify-content: start;
+  gap: 80px;
+  margin-top: 20px;
+}
+
+.filter-div button {
+  width: 150px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.filter-nb-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* RECIPES NUMBER */
+
+.nb-recettes {
+  margin-block-start: 15px;
+}
+
+.nb-recettes-detailed {
+  margin-inline-end: 10px;
+}
+
+.nb-recettes span {
+  font-family: 'Anton', serif;
 }
