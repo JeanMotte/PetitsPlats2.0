@@ -9,7 +9,7 @@
 .banner-container {
   position: relative;
   width: 100%;
-  height: 50vh; /* Adjust height as needed */
+  height: 60vh;
   background: url('../assets/home-banner.jpg') no-repeat center center/cover;
   display: flex;
   align-items: center;
@@ -36,18 +36,30 @@
   text-align: center;
 }
 
-.logo {
+.logo-container {
   position: absolute;
   top: 1em;
   left: 1em;
+  display: flex;
+  align-items: center; /* Keeps text and icon aligned */
+  gap: 5px; /* Adds spacing between logo and icon */
+}
+
+.logo {
+  font-size: 1.5rem;
+  color: white;
+}
+
+.fa-circle-dot {
+  color: white;
+  font-size: 15px;
 }
 
 .content h1 {
   font-size: 2rem;
-  font-weight: bold;
   color: #ffd15b;
   margin-bottom: 20px;
-  letter-spacing: 1px;
+  line-height: 1.5em;
 }
 
 /* Search bar */
