@@ -41,8 +41,8 @@
   top: 1em;
   left: 1em;
   display: flex;
-  align-items: center; /* Keeps text and icon aligned */
-  gap: 5px; /* Adds spacing between logo and icon */
+  align-items: center;
+  gap: 5px;
 }
 
 .logo {
@@ -68,7 +68,7 @@
   justify-content: center;
   align-items: center;
   background: white;
-  border-radius: 7px;
+  border-radius: 8px;
   overflow: hidden;
   width: 50vw;
   margin: auto;
@@ -76,16 +76,22 @@
 
 .search-bar input {
   border: none;
-  padding: 12px;
+  padding: 16px;
   flex: 1;
   outline: none;
   font-size: 1rem;
+  font-family: 'Manrope', sans-serif;
+  color: #7a7a7a;
 }
 
 .search-bar button {
-  background: black;
+  background: #1b1b1b;
   color: white;
   border: none;
-  padding: 12px 20px;
+  padding: 10px;
+  margin-inline-end: 7px;
   cursor: pointer;
+  width: 45px;
+  height: 45px;
+  border-radius: 8px;
 }
