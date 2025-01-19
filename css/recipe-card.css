@@ -1,13 +1,14 @@
 .recipe-card {
   max-width: 300px;
-  max-height: 600px;
-  height: 600px;
+  max-height: 700px;
+  height: 800px;
   background-color: white;
   border-radius: 10px;
 }
 
 .recipe-card img {
   width: 300px;
+  min-height: 200px;
   max-height: 200px;
   object-fit: cover;
   border-radius: 10px 10px 0 0;
@@ -42,7 +43,6 @@
   font-size: 14px;
   font-family: 'Manrope', sans-serif;
   font-weight: 400;
-  margin-block-end: 0;
 }
 
 .recette-label {
@@ -50,7 +50,7 @@
   font-family: 'Manrope', sans-serif;
   font-weight: 700;
   color: #aa9c9c;
-  margin-block-end: 0;
+  margin-block-end: 10px;
 }
 
 .recipe-name {
@@ -72,15 +72,23 @@
   padding: 20px;
 }
 
-.recipe-card li p,
+.recipe-card li p {
+  font-size: 11px;
+  margin-block-end: 0;
+}
+
 .recette-description {
   font-size: 11px;
+  margin-block-end: 10px;
 }
 
 .recipe-card li {
   min-width: 40%;
+  height: 45px;
 }
 
 .recipe-quantity {
   margin-block-end: 0;
+  color: Grey;
+  font-weight: 300;
 }

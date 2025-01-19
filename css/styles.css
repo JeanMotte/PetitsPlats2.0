@@ -104,6 +104,7 @@
 main {
   padding-inline: 100px;
   background-color: #ededed;
+  padding-block-end: 50px;
 }
 
 /* FILTERS */
