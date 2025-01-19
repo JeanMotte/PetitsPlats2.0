@@ -1,11 +1,14 @@
-export const triggerDropdown = () => {
-    const dropdowns = document.querySelectorAll('.filter-button');
-    dropdowns.forEach(btn => {
-        const dropdownContent = document.createElement('div');
-        dropdownContent.classList.add('dropdown-content');
-        btn.appendChild(dropdownContent);
-        btn.addEventListener('click', () => {
-            dropdownContent.classList.toggle('active');
-        })
-    })
-}
+// import { recipes } from "../../data/recipes"
+
+// export const triggerDropdown = (searchInput, itemList) => {
+//     const input = document.getElementById(searchInput)
+//     const list = document.getElementById(itemList)
+
+//     recipes.forEach(recipe => {
+//         recipe.ingredients.forEach(ingredient => {
+//             const option = document.createElement('option')
+//             option.value = ingredient
+//             list.appendChild(option)
+//         })
+//     })
+// }
