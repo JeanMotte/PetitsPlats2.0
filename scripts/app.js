@@ -1,5 +1,6 @@
 import { recipes } from '../data/recipes.js';
 import { recipeTemplate } from './template/recipe-template.js';
+import { triggerDropdown } from './utils/filter.js';
 import { recipesCounter } from './utils/recipe-counter.js';
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -15,4 +16,5 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Number of recipes displayed 
     recipesCounter(recipes);
+    triggerDropdown();
 })
