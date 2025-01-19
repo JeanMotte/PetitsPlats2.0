@@ -51,7 +51,7 @@
   font-family: 'Manrope', sans-serif;
   font-weight: 700;
   color: #aa9c9c;
-  margin-block-end: 10px;
+  margin-block-end: 0;
 }
 
 .recipe-name {
@@ -83,13 +83,17 @@
   margin-block-end: 10px;
 }
 
+.recette-ingredients {
+  margin-block-start: 0;
+}
+
 .recipe-card li {
   min-width: 40%;
-  height: 45px;
+  /* height: 45px; */
 }
 
 .recipe-quantity {
-  margin-block-end: 0;
+  margin-block: 0;
   color: Grey;
   font-weight: 300;
 }
