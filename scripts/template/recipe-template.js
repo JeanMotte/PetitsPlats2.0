@@ -19,7 +19,7 @@ export const recipeTemplate = (recipe) => {
             `
 }
 
-export const recipeAttributes = (recipeCard) => {
+export const setRecipeAttributes = (recipeCard) => {
     const { ingredients, appliance, ustensils } = recipeCard.recipe;
 
     recipeCard.setAttribute('data-ingredients', ingredients.map(i => i.ingredient).join(','));

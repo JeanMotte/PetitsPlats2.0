@@ -125,7 +125,7 @@ main {
 .filter-nb-container {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: start;
 }
 
 .filter-button {
@@ -138,6 +138,10 @@ main {
 }
 
 /* RECIPES NUMBER */
+
+.nb-recettes {
+  margin-block-start: 20px;
+}
 
 .nb-recettes-detailed {
   margin-inline-end: 10px;

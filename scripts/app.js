@@ -1,5 +1,6 @@
 import { recipes } from '../data/recipes.js';
-import { recipeAttributes, recipeTemplate } from './template/recipe-template.js';
+import { recipeTemplate } from './template/recipe-template.js';
+import { recipesCounter } from './utils/recipe-counter.js';
 
 document.addEventListener('DOMContentLoaded', () => {
     const recipesContainer = document.querySelector('.recipes-container');
@@ -9,5 +10,9 @@ document.addEventListener('DOMContentLoaded', () => {
         recipeCard.innerHTML = recipeTemplate(recipe);
 
         recipesContainer.appendChild(recipeCard);
+
     });
+
+    // Number of recipes displayed 
+    recipesCounter(recipes);
 })

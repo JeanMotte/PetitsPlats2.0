@@ -19,6 +19,7 @@
   flex-wrap: wrap;
   justify-content: space-between;
   row-gap: 50px;
+  margin-block-start: 20px;
 }
 
 .recipe-img-container {
