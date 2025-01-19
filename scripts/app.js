@@ -16,7 +16,11 @@ document.addEventListener('DOMContentLoaded', () => {
             <p class="recette-description text-card">${recipe.description}</p>
             <p class="recette-label">Ingredients</p>
             <ul class="recette-ingredients">
-                ${recipe.ingredients.map(ingredient => `<li><p class="text-card">${ingredient.ingredient}</p><p>${ingredient.quantity} ${ingredient.unit}</p></li>`).join('')}
+                ${recipe.ingredients.map(ingredient =>
+            `<li>
+                <p class="text-card">${ingredient.ingredient ?? ''}</p>
+                <p class="recipe-quantity">${ingredient.quantity ?? ''} ${ingredient.unit ?? ''}</p>
+            </li>`).join('')}
         </div>
             `
         recipesContainer.appendChild(recipeCard);
