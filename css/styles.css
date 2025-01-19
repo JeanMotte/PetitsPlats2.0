@@ -102,7 +102,8 @@
 }
 
 main {
-  margin-inline: 100px;
+  padding-inline: 100px;
+  background-color: #ededed;
 }
 
 /* FILTERS */
@@ -114,7 +115,7 @@ main {
 }
 
 .filter-div button {
-  width: 150px;
+  width: 180px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -126,11 +127,16 @@ main {
   align-items: center;
 }
 
-/* RECIPES NUMBER */
-
-.nb-recettes {
-  margin-block-start: 15px;
+.filter-button {
+  background: white;
+  border: none;
+  padding-inline-start: 15px;
+  padding-inline-end: 20px;
+  padding-block: 10px;
+  border-radius: 8px;
 }
+
+/* RECIPES NUMBER */
 
 .nb-recettes-detailed {
   margin-inline-end: 10px;
