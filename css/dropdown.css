@@ -2,3 +2,7 @@
   background-color: white;
   height: 200px;
 }
+
+.filter-button {
+  cursor: pointer;
+}
