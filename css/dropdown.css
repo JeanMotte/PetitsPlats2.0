@@ -1,6 +1,11 @@
+.dropdown-content {
+  display: none;
+}
+
 .active {
   background-color: white;
   height: 200px;
+  display: block;
 }
 
 .filter-button {
