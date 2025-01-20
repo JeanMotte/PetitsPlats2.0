@@ -122,7 +122,7 @@ main {
   margin-block: 20px;
 }
 
-.filter-div button {
+.filter-div .filter-button {
   width: 180px;
   display: flex;
   justify-content: space-between;
