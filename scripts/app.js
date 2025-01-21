@@ -1,6 +1,6 @@
 import { recipes } from '../data/recipes.js';
 import { recipeTemplate } from './template/recipe-template.js';
-import { populateDropdown } from './utils/dropdown.js';
+import { handleDropdowns, populateDropdown } from './utils/dropdown.js';
 import { recipesCounter } from './utils/recipe-counter.js';
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -35,4 +35,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const finalUstensilsItems = [...ustensilsItems].map(ustensil => ustensil.charAt(0).toUpperCase() + ustensil.slice(1));
     finalUstensilsItems.sort();
     populateDropdown('ustensil_list', finalUstensilsItems);
+
+    handleDropdowns()
 })
