@@ -11,7 +11,7 @@ export const dropdownReactiveSearch = () => {
 
             const dropdownContent = e.target.closest('.dropdown_content')
             const dropdown = dropdownContent.querySelector('.dropdown_list')
-            const dropdownItems = dropdown.querySelectorAll('.dropdown_item')
+            const dropdownItems = dropdown.querySelectorAll('li')
             dropdownItems.forEach((item) => {
                 if (item.textContent.toLowerCase().includes(value)) {
                     item.style.display = 'block'
