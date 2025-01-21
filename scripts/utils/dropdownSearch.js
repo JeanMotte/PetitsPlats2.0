@@ -13,11 +13,9 @@ export const dropdownReactiveSearch = () => {
             const dropdown = dropdownContent.querySelector('.dropdown_list')
             const dropdownItems = dropdown.querySelectorAll('li')
             dropdownItems.forEach((item) => {
-                if (item.textContent.toLowerCase().includes(value)) {
-                    item.style.display = 'block'
-                } else {
-                    item.style.display = 'none'
-                }
+                (item.textContent.toLowerCase().includes(value))
+                    ? item.style.display = 'block'
+                    : item.style.display = 'none'
             })
         })
     })
