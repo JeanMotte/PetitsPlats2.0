@@ -1,6 +1,6 @@
 import { recipes } from '../data/recipes.js';
 import { recipeTemplate } from './template/recipe-template.js';
-import { handleDropdowns, populateDropdown } from './utils/dropdown.js';
+import { handleDropdowns, populateDropdown } from './utils/dropdownBehaviour.js';
 import { recipesCounter } from './utils/recipe-counter.js';
 
 document.addEventListener('DOMContentLoaded', () => {
