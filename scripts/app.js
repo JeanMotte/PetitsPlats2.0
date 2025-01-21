@@ -1,6 +1,7 @@
 import { recipes } from '../data/recipes.js';
 import { recipeTemplate } from './template/recipe-template.js';
 import { handleDropdowns, populateDropdown } from './utils/dropdownBehaviour.js';
+import { dropdownReactiveSearch } from './utils/dropdownSearch.js';
 import { recipesCounter } from './utils/recipe-counter.js';
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -37,4 +38,5 @@ document.addEventListener('DOMContentLoaded', () => {
     populateDropdown('ustensil_list', finalUstensilsItems);
 
     handleDropdowns()
+    dropdownReactiveSearch()
 })
