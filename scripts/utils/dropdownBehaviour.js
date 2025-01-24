@@ -12,7 +12,7 @@ export const populateDropdown = (dropdown, items) => {
 const ingredientButton = document.getElementById('ingredient_button')
 const applianceButton = document.getElementById('appliance_button')
 const ustensilsButton = document.getElementById('ustensil_button')
-const dropdownsButtons = [ingredientButton, applianceButton, ustensilsButton]
+export const dropdownsButtons = [ingredientButton, applianceButton, ustensilsButton]
 
 export const handleDropdowns = () => dropdownsButtons.forEach(button => {
     button.addEventListener('click', () => {
