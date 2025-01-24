@@ -4,7 +4,6 @@ import { handleDropdowns, populateDropdown } from './utils/dropdownBehaviour.js'
 import { dropdownReactiveSearch } from './utils/dropdownSearch.js';
 import { handleTags } from './utils/dropdownTags.js';
 import { reactiveTagsandRecipes } from './utils/filterRecipeFromTags.js';
-import { recipesCounter } from './utils/recipe-counter.js';
 
 document.addEventListener('DOMContentLoaded', () => {
     const recipesContainer = document.querySelector('.recipes-container');
@@ -18,9 +17,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     });
-
-    // Number of recipes displayed 
-    recipesCounter(recipes);
 
     // Populate dropdowns
     const ingredientList = recipes.flatMap(recipe => recipe.ingredients);
@@ -45,5 +41,4 @@ document.addEventListener('DOMContentLoaded', () => {
     dropdownReactiveSearch()
     handleTags()
     reactiveTagsandRecipes()
-    recipesCounter(recipes);
 })

@@ -21,8 +21,6 @@ export const recipeTemplate = (recipe) => {
 
 export const setRecipeAttributes = (recipeCard) => {
     const { ingredients, appliance, ustensils } = recipeCard.recipe;
-    console.log(recipeCard.recipe);
-
 
     recipeCard.setAttribute('data-ingredients', ingredients.map(i => i.ingredient).join(','));
     recipeCard.setAttribute('data-appliance', appliance);
