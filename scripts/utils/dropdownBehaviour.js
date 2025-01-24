@@ -15,7 +15,7 @@ const ustensilsButton = document.getElementById('ustensil_button')
 const dropdownsButtons = [ingredientButton, applianceButton, ustensilsButton]
 
 export const handleDropdowns = () => dropdownsButtons.forEach(button => {
-    button.addEventListener('click', (e) => {
+    button.addEventListener('click', () => {
         button.classList.toggle('dropdown-open')
         button.nextElementSibling.classList.toggle('active')
         const chevron = button.querySelector('.chevron-down')
@@ -32,12 +32,22 @@ export const handleDropdowns = () => dropdownsButtons.forEach(button => {
         dropdownsButtons.filter(btn => btn !== button).forEach(btn => {
             btn.classList.remove('dropdown-open')
             btn.nextElementSibling.classList.remove('active')
+
+            const otherChevron = btn.querySelector('.chevron-down');
+            if (otherChevron) {
+                otherChevron.src = './assets/chevron-down.svg';
+            }
         })
     })
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape') {
             button.classList.remove('dropdown-open')
             button.nextElementSibling.classList.remove('active')
+
+            const chevron = button.querySelector('.chevron-down');
+            if (chevron) {
+                chevron.src = './assets/chevron-down.svg';
+            }
         }
     })
     // close dropdown when clicking outside
@@ -50,6 +60,11 @@ export const handleDropdowns = () => dropdownsButtons.forEach(button => {
             dropdownsButtons.forEach(button => {
                 button.classList.remove('dropdown-open');
                 button.nextElementSibling.classList.remove('active');
+
+                const chevron = button.querySelector('.chevron-down');
+                if (chevron) {
+                    chevron.src = './assets/chevron-down.svg';
+                }
             });
         }
     });
