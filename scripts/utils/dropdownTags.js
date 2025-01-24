@@ -7,6 +7,7 @@ export const handleTags = () => {
             item.classList.toggle("item-active");
 
             // TODO: array to use to filter recipes
+            // TODO: use recipes-container children to filter recipes
             const aciveTags = document.querySelectorAll(".item-active");
             const tagsArray = Array.from(aciveTags).map((tag) => tag.textContent.trim());
             console.log(tagsArray);
