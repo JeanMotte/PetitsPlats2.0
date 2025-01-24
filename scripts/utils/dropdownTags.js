@@ -6,6 +6,12 @@ export const handleTags = () => {
             const tagsContainer = document.querySelector(".tags-container");
             item.classList.toggle("item-active");
 
+            // TODO: array to use to filter recipes
+            const aciveTags = document.querySelectorAll(".item-active");
+            const tagsArray = Array.from(aciveTags).map((tag) => tag.textContent.trim());
+            console.log(tagsArray);
+
+            // display or remove tags wether it exists or not
             const tagText = item.textContent.trim();
             const existingTag = Array.from(tagsContainer.children).find((tag) => tag.querySelector('span').textContent.trim() === tagText);
 
@@ -24,6 +30,7 @@ export const handleTags = () => {
                 existingTag.remove();
             }
 
+            // remove tag and updates dropdown state
             const closeButtons = document.querySelectorAll(".tag-close");
             closeButtons.forEach((button) => {
                 button.addEventListener("click", () => {
