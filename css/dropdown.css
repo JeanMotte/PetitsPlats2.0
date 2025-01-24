@@ -24,7 +24,7 @@
   border-radius: 0 0 10px 10px;
   scrollbar-width: none;
   background-color: white;
-  animation: dropdownSlide 1s ease-in-out;
+  animation: dropdownSlide 0.5s ease-in-out;
   transition: max-height 0.5s ease-out;
 }
 
