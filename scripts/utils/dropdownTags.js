@@ -1,3 +1,5 @@
+import { reactiveTagsandRecipes } from "./filterRecipeFromTags.js";
+
 export const handleTags = () => {
     document.addEventListener("click", (event) => {
         const item = event.target.closest(".dropdown_item");
@@ -6,11 +8,7 @@ export const handleTags = () => {
             const tagsContainer = document.querySelector(".tags-container");
             item.classList.toggle("item-active");
 
-            // TODO: array to use to filter recipes
-            // TODO: use recipes-container children to filter recipes
-            const aciveTags = document.querySelectorAll(".item-active");
-            const tagsArray = Array.from(aciveTags).map((tag) => tag.textContent.trim());
-            console.log(tagsArray);
+
 
             // display or remove tags wether it exists or not
             const tagText = item.textContent.trim();
@@ -26,10 +24,18 @@ export const handleTags = () => {
                 </button>
                 `;
                 tagsContainer.appendChild(tagElement);
+                reactiveTagsandRecipes();
             }
             else {
                 existingTag.remove();
+                reactiveTagsandRecipes();
             }
+
+            // TODO: array to use to filter recipes
+            // TODO: use recipes-container children to filter recipes
+            // const aciveTags = document.querySelectorAll(".item-active");
+            // const tagsArray = Array.from(aciveTags).map((tag) => tag.textContent.trim());
+            // console.log(tagsArray);
 
             // remove tag and updates dropdown state
             const closeButtons = document.querySelectorAll(".tag-close");
@@ -37,6 +43,7 @@ export const handleTags = () => {
                 button.addEventListener("click", () => {
                     button.closest(".tag").remove();
                     item.classList.remove("item-active");
+                    reactiveTagsandRecipes();
                 });
             });
         }

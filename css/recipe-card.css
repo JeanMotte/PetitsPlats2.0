@@ -4,6 +4,7 @@
   height: 800px;
   background-color: white;
   border-radius: 10px;
+  display: none;
 }
 
 .recipe-card img {
@@ -95,4 +96,8 @@
   margin-block: 0;
   color: Grey;
   font-weight: 300;
+}
+
+.recipe-active {
+  display: block;
 }

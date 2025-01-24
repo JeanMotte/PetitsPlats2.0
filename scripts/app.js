@@ -3,6 +3,7 @@ import { recipeTemplate } from './template/recipe-template.js';
 import { handleDropdowns, populateDropdown } from './utils/dropdownBehaviour.js';
 import { dropdownReactiveSearch } from './utils/dropdownSearch.js';
 import { handleTags } from './utils/dropdownTags.js';
+import { reactiveTagsandRecipes } from './utils/filterRecipeFromTags.js';
 import { recipesCounter } from './utils/recipe-counter.js';
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -13,6 +14,8 @@ document.addEventListener('DOMContentLoaded', () => {
         recipeCard.innerHTML = recipeTemplate(recipe);
 
         recipesContainer.appendChild(recipeCard);
+
+
 
     });
 
@@ -41,4 +44,6 @@ document.addEventListener('DOMContentLoaded', () => {
     handleDropdowns()
     dropdownReactiveSearch()
     handleTags()
+    reactiveTagsandRecipes()
+    recipesCounter(recipes);
 })
