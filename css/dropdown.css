@@ -50,12 +50,13 @@
 }
 
 .dropdown_item:hover {
-  background-color: #f1f1f1;
-  transition: 0.2s;
+  background-color: #ffd15b;
+  padding-block: 5px;
+  transition: 0.1s;
 }
 
 .dropdown_item:focus {
-  background-color: #f1f1f1;
+  background-color: #ffd15b;
   transition: 0.2s;
 }
 
@@ -101,6 +102,37 @@
 /* TAGS */
 
 .item-active {
-  background-color: #f1f1f1;
+  background-color: #ffd15b;
   padding-block: 5px;
+}
+
+.tags-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2em;
+}
+
+.tag {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-inline-start: 15px;
+  padding-inline-end: 15px;
+  padding-block: 9px;
+  border-radius: 10px;
+  background-color: #ffd15b;
+  font-size: 14px;
+  width: 155px;
+}
+
+.tag button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.tag button img {
+  width: 10px;
+  height: 10px;
 }

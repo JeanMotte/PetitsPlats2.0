@@ -3,24 +3,34 @@ export const handleTags = () => {
         const item = event.target.closest(".dropdown_item");
 
         if (item) {
-            item.classList.toggle("item-active");
-            const activeItems = document.querySelectorAll(".item-active");
-            const tags = Array.from(activeItems).map((tag) => tag.textContent);
-            console.log(tags);
-
             const tagsContainer = document.querySelector(".tags-container");
-            tags.forEach((tag) => {
+            item.classList.toggle("item-active");
+
+            const tagText = item.textContent.trim();
+            const existingTag = Array.from(tagsContainer.children).find((tag) => tag.querySelector('span').textContent.trim() === tagText);
+
+            if (!existingTag) {
                 const tagElement = document.createElement("div");
                 tagElement.classList.add("tag");
                 tagElement.innerHTML = `
-                <span>${tag}</span>
+                <span>${tagText}</span>
                 <button class="tag-close">
-                    <img src="assets/cross.svg" alt="close icon">
+                    <img src="assets/tag-close.svg" alt="close icon">
                 </button>
                 `;
                 tagsContainer.appendChild(tagElement);
-            })
+            }
+            else {
+                existingTag.remove();
+            }
 
+            const closeButtons = document.querySelectorAll(".tag-close");
+            closeButtons.forEach((button) => {
+                button.addEventListener("click", () => {
+                    button.closest(".tag").remove();
+                    item.classList.remove("item-active");
+                });
+            });
         }
     });
 };
