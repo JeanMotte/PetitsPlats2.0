@@ -45,12 +45,12 @@ document.addEventListener('DOMContentLoaded', () => {
     reactiveTagsandRecipes(recipesContainer)
     mainSearch(recipesContainer)
 
-    const visibleFromTags = reactiveTagsandRecipes(recipesContainer);
-    const visibleFromSearch = mainSearch(recipesContainer);
+    // const visibleFromTags = reactiveTagsandRecipes(recipesContainer);
+    // const visibleFromSearch = mainSearch(recipesContainer);
 
-    if (visibleFromTags === 0 && visibleFromSearch === 0) {
-        document.querySelector('.no-recipe').style.display = 'block';
-    } else {
-        document.querySelector('.no-recipe').style.display = 'none';
-    }
+    // if (visibleFromTags === 0 && visibleFromSearch === 0) {
+    //     document.querySelector('.no-recipe').style.display = 'block';
+    // } else {
+    //     document.querySelector('.no-recipe').style.display = 'none';
+    // }
 })

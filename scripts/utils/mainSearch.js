@@ -1,7 +1,9 @@
+import { recipesCounter } from "./recipe-counter.js";
 
 export const mainSearch = (recipeContainer) => {
 
     const searchbar = document.querySelector('.main-search');
+    const noRecipeMessage = document.querySelector('.no-recipe');
 
     searchbar.addEventListener('input', () => {
         const searchValue = searchbar.value.trim().toLowerCase();
@@ -10,7 +12,8 @@ export const mainSearch = (recipeContainer) => {
         if (searchValue === '') {
             recipeContainer.querySelectorAll('.recipe-card.recipe-active')
                 .forEach(card => card.style.display = 'block');
-            visibleRecipes = 0;
+            visibleRecipes = recipeContainer.querySelectorAll('.recipe-card').length;
+            recipesCounter(visibleRecipes);
         }
         if (searchbar.value.trim().length < 3) return
 
@@ -33,6 +36,10 @@ export const mainSearch = (recipeContainer) => {
                 card.style.display = 'none';
             }
         });
+
+        noRecipeMessage.style.display = (visibleRecipes === 0) ? 'block' : 'none';
+
+        recipesCounter(visibleRecipes);
         return visibleRecipes;
     })
 }
