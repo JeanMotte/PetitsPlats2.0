@@ -41,7 +41,16 @@ document.addEventListener('DOMContentLoaded', () => {
     handleDropdowns()
     dropdownReactiveSearch()
     handleTags()
-    reactiveTagsandRecipes(recipesContainer)
 
+    reactiveTagsandRecipes(recipesContainer)
     mainSearch(recipesContainer)
+
+    const visibleFromTags = reactiveTagsandRecipes(recipesContainer);
+    const visibleFromSearch = mainSearch(recipesContainer);
+
+    if (visibleFromTags === 0 && visibleFromSearch === 0) {
+        document.querySelector('.no-recipe').style.display = 'block';
+    } else {
+        document.querySelector('.no-recipe').style.display = 'none';
+    }
 })

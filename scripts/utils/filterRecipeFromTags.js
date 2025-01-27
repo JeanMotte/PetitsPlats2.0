@@ -13,7 +13,7 @@ export const reactiveTagsandRecipes = (recipeContainer) => {
 
 
     totalRecipes.forEach(recipe => {
-        if (tags.length === 0 && recipeContainer.children.length === 0) {
+        if (tags.length === 0) {
             recipe.classList.add('recipe-active');
             hasVisibleRecipes = true;
             return;
@@ -38,5 +38,5 @@ export const reactiveTagsandRecipes = (recipeContainer) => {
     recipesCounter(nbVisibleRecipes);
     nbRecipeLabel.textContent = nbVisibleRecipes > 1 ? 'recettes' : 'recette';
 
-    console.log('tags', tags);
+    return tags.length;
 }

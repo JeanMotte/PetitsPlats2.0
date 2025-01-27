@@ -5,15 +5,18 @@ export const mainSearch = (recipeContainer) => {
 
     searchbar.addEventListener('input', () => {
         const searchValue = searchbar.value.trim().toLowerCase();
+        let visibleRecipes = 0;
 
         if (searchValue === '') {
             recipeContainer.querySelectorAll('.recipe-card')
                 .forEach(card => card.style.display = 'block');
+            visibleRecipes = 0;
         }
         if (searchbar.value.length < 3) return
 
 
         const recipeCards = recipeContainer.querySelectorAll('.recipe-card');
+
 
         recipeCards.forEach(card => {
             const recipeTitle = card.querySelector('.recipe-name')?.textContent.trim().toLowerCase() || '';
@@ -24,10 +27,12 @@ export const mainSearch = (recipeContainer) => {
 
             if (searchableText.includes(searchValue)) {
                 card.style.display = 'block';
+                visibleRecipes++;
             }
             else {
                 card.style.display = 'none';
             }
         });
+        return visibleRecipes;
     })
 }
