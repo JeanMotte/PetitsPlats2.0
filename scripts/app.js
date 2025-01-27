@@ -4,6 +4,7 @@ import { handleDropdowns, populateDropdown } from './utils/dropdownBehaviour.js'
 import { dropdownReactiveSearch } from './utils/dropdownSearch.js';
 import { handleTags } from './utils/dropdownTags.js';
 import { reactiveTagsandRecipes } from './utils/filterRecipeFromTags.js';
+import { mainSearch } from './utils/mainSearch.js';
 
 document.addEventListener('DOMContentLoaded', () => {
     const recipesContainer = document.querySelector('.recipes-container');
@@ -41,4 +42,6 @@ document.addEventListener('DOMContentLoaded', () => {
     dropdownReactiveSearch()
     handleTags()
     reactiveTagsandRecipes()
+
+    mainSearch(recipesContainer)
 })
