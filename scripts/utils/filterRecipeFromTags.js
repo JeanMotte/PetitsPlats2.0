@@ -1,6 +1,6 @@
 import { recipesCounter } from "./recipe-counter.js";
 
-export const reactiveTagsandRecipes = () => {
+export const reactiveTagsandRecipes = (recipeContainer) => {
     const tagsContainer = document.querySelector(".tags-container");
     const tags = Array.from(tagsContainer.children).map((tag) => tag.querySelector('span').textContent.toLowerCase().trim());
 
@@ -13,7 +13,7 @@ export const reactiveTagsandRecipes = () => {
 
 
     totalRecipes.forEach(recipe => {
-        if (tags.length === 0) {
+        if (tags.length === 0 && recipeContainer.children.length === 0) {
             recipe.classList.add('recipe-active');
             hasVisibleRecipes = true;
             return;

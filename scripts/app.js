@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
     handleDropdowns()
     dropdownReactiveSearch()
     handleTags()
-    reactiveTagsandRecipes()
+    reactiveTagsandRecipes(recipesContainer)
 
     mainSearch(recipesContainer)
 })
