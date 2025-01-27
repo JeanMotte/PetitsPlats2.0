@@ -8,11 +8,11 @@ export const mainSearch = (recipeContainer) => {
         let visibleRecipes = 0;
 
         if (searchValue === '') {
-            recipeContainer.querySelectorAll('.recipe-card')
+            recipeContainer.querySelectorAll('.recipe-card.recipe-active')
                 .forEach(card => card.style.display = 'block');
             visibleRecipes = 0;
         }
-        if (searchbar.value.length < 3) return
+        if (searchbar.value.trim().length < 3) return
 
 
         const recipeCards = recipeContainer.querySelectorAll('.recipe-card');
