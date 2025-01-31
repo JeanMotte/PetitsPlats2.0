@@ -3,7 +3,7 @@ import { recipeTemplate } from './template/recipe-template.js';
 import { handleDropdowns, populateDropdown } from './utils/dropdownBehaviour.js';
 import { dropdownReactiveSearch } from './utils/dropdownSearch.js';
 import { handleTags } from './utils/dropdownTags.js';
-import { filterRecipes } from './utils/globalFilterRecipes.js';
+import { nativeFilterRecipes } from './utils/nativeGlobalFilterRecipes.js';
 
 document.addEventListener('DOMContentLoaded', () => {
     const recipesContainer = document.querySelector('.recipes-container');
@@ -39,5 +39,5 @@ document.addEventListener('DOMContentLoaded', () => {
     dropdownReactiveSearch()
     handleTags()
 
-    filterRecipes(recipesContainer)
+    nativeFilterRecipes(recipesContainer)
 })
