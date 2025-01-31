@@ -1,3 +1,4 @@
+import { escapeHtml } from "./escapeHtml.js";
 import { recipesCounter } from "./recipe-counter.js";
 
 export const filterRecipes = (recipeContainer) => {
@@ -6,7 +7,9 @@ export const filterRecipes = (recipeContainer) => {
     const noRecipeMessage = document.querySelector('.no-recipe');
 
     const filter = () => {
-        const searchValue = searchbar.value.trim().toLowerCase();
+        const rawSearchValue = searchbar.value.trim().toLowerCase();
+        const searchValue = escapeHtml(rawSearchValue); // Sanitize input
+
         const selectedTags = Array.from(tagsContainer.children).map(tag => tag.querySelector('span').textContent.toLowerCase().trim());
 
         let visibleRecipes = 0;
