@@ -6,6 +6,11 @@ export const filterRecipes = (recipeContainer) => {
     const tagsContainer = document.querySelector(".tags-container");
     const noRecipeMessage = document.querySelector('.no-recipe');
 
+    // select dropdown lists
+    const ingredientList = document.getElementById('ingredient_list');
+    const applianceList = document.getElementById('appliance_list');
+    const ustensilList = document.getElementById('ustensil_list');
+
     const filter = () => {
         const rawSearchValue = searchbar.value.trim().toLowerCase();
         const searchValue = escapeHtml(rawSearchValue); // Sanitize input
@@ -14,6 +19,11 @@ export const filterRecipes = (recipeContainer) => {
 
         let visibleRecipes = 0;
         const recipeCards = recipeContainer.querySelectorAll('.recipe-card');
+
+        // Store unique ingredients, appliances, and utensils in the filtered recipes
+        const filteredIngredients = new Set();
+        const filteredAppliances = new Set();
+        const filteredUstensils = new Set();
 
         recipeCards.forEach(card => {
             const recipeTitle = card.querySelector('.recipe-name')?.textContent.trim().toLowerCase() || '';
@@ -27,6 +37,17 @@ export const filterRecipes = (recipeContainer) => {
             if (matchesSearch && matchesTags) {
                 card.style.display = 'block';
                 visibleRecipes++;
+
+                // Extract the ingredient, appliance, and ustensil from this recipe card
+                const ingredients = Array.from(card.querySelectorAll('.text-card')).map(ingredient =>
+                    ingredient.textContent.trim().toLowerCase()
+                );
+                const appliance = card.getAttribute('data-appliance')?.toLowerCase();
+                const ustensils = card.getAttribute('data-ustensils')?.split(',').map(u => u.trim().toLowerCase());
+
+                ingredients.forEach(ingredient => filteredIngredients.add(ingredient));
+                if (appliance) filteredAppliances.add(appliance);
+                ustensils?.forEach(ustensil => filteredUstensils.add(ustensil));
             } else {
                 card.style.display = 'none';
             }
@@ -34,6 +55,11 @@ export const filterRecipes = (recipeContainer) => {
 
         noRecipeMessage.style.display = visibleRecipes === 0 ? 'block' : 'none';
         recipesCounter(visibleRecipes);
+
+        // Update dropdown lists
+        updateDropdown(ingredientList, filteredIngredients);
+        updateDropdown(applianceList, filteredAppliances);
+        updateDropdown(ustensilList, filteredUstensils);
     };
 
     // Attach event listeners for both search input and tag updates
@@ -45,4 +71,17 @@ export const filterRecipes = (recipeContainer) => {
 
     // Initial filter when page loads
     filter();
+};
+
+const updateDropdown = (dropdown, filteredItems) => {
+    const items = dropdown.querySelectorAll('li');
+
+    items.forEach(item => {
+        const itemText = item.textContent.trim().toLowerCase();
+        if (filteredItems.has(itemText)) {
+            item.style.display = 'block';
+        } else {
+            item.style.display = 'none';
+        }
+    });
 };
