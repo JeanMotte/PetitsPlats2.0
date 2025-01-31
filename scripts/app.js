@@ -3,8 +3,7 @@ import { recipeTemplate } from './template/recipe-template.js';
 import { handleDropdowns, populateDropdown } from './utils/dropdownBehaviour.js';
 import { dropdownReactiveSearch } from './utils/dropdownSearch.js';
 import { handleTags } from './utils/dropdownTags.js';
-import { reactiveTagsandRecipes } from './utils/filterRecipeFromTags.js';
-import { mainSearch } from './utils/mainSearch.js';
+import { filterRecipes } from './utils/globalFilterRecipes.js';
 
 document.addEventListener('DOMContentLoaded', () => {
     const recipesContainer = document.querySelector('.recipes-container');
@@ -42,15 +41,5 @@ document.addEventListener('DOMContentLoaded', () => {
     dropdownReactiveSearch()
     handleTags()
 
-    reactiveTagsandRecipes(recipesContainer)
-    mainSearch(recipesContainer)
-
-    // const visibleFromTags = reactiveTagsandRecipes(recipesContainer);
-    // const visibleFromSearch = mainSearch(recipesContainer);
-
-    // if (visibleFromTags === 0 && visibleFromSearch === 0) {
-    //     document.querySelector('.no-recipe').style.display = 'block';
-    // } else {
-    //     document.querySelector('.no-recipe').style.display = 'none';
-    // }
+    filterRecipes(recipesContainer)
 })
